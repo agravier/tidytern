@@ -1,0 +1,5 @@
+click
+
+# Dev requirements
+wheel
+isort[requirements]
