@@ -107,6 +107,14 @@ Note, to combine the coverage data from all the tox environments run:
 
             PYTEST_ADDOPTS=--cov-append tox
 
+
+TODOs
+=====
+
+- Change '3.8-dev' to '3.8' once the final release of Python 3.8 has landed
+
+
+
 Credits
 =======
 
