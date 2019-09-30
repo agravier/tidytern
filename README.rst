@@ -24,7 +24,7 @@ tidytern
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/agravier/tidytern
 
-.. |codecov| image:: https://codecov.io/github/agravier/tidytern/coverage.svg?branch=master
+.. |codecov| image:: https://codecov.io/gh/agravier/tidytern/branch/master/graphs/badge.svg?branch=master
     :alt: Coverage Status
     :target: https://codecov.io/github/agravier/tidytern
 
@@ -71,26 +71,36 @@ You can also install the in-development version with::
 Documentation
 =============
 
-
 https://tidytern.readthedocs.io/
 
 
 Development
 ===========
 
-The testing (tox.ini and .travis.yml) configuration is generated from templates. For your convenience there's an initial bootstrap tox.ini, to get the initial generation going just run:
+Python versions (both for development and for tox tests) and are most easily
+managed with `Pyenv <https://github.com/pyenv/pyenv>`_ and its virtualenv
+plugin.
 
-tox
-You can later regenerate tox.ini and .travis.yml by running (if you enabled the test_matrix_configurator option):
+To install the latest supported Python versions with pyenv and list them in the
+local .python-version file for use by tox::
 
-tox -e bootstrap
-After this you can create the initial repository (make sure you create an empty Github project):
+    pyenv install 3.7.4 && pyenv install 3.8.0b4
 
-To run the all tests run::
+
+Running tests
+-------------------------------------------------
+
+Install tox the global python 3 environment. It may be installed using your
+package manager or with pip::
+
+    pip3 install tox
+
+
+To run the all tests, ensure that you are not within a virtualenv and run::
 
     tox
 
-Note, to combine the coverage data from all the tox environments run:
+To combine the coverage data from all the tox environments run:
 
 .. list-table::
     :widths: 10 90
@@ -108,6 +118,13 @@ Note, to combine the coverage data from all the tox environments run:
             PYTEST_ADDOPTS=--cov-append tox
 
 
+Two requirements files are used to describe the development setup:
+
+- The requirements.txt file describes a working development environment with all
+  pinned dependencies.
+- The requirements-base.txt file contains the direct unpinned dependencies only.
+
+
 TODOs
 =====
 
@@ -118,4 +135,5 @@ TODOs
 Credits
 =======
 
-The initial project was setup with the help of `ionelmc's cookiecutter template <https://github.com/ionelmc/cookiecutter-pylibrary>`_.
+The initial project was setup with the help of `ionelmc's cookiecutter template
+<https://github.com/ionelmc/cookiecutter-pylibrary>`_.
