@@ -90,7 +90,10 @@ local .python-version file for use by tox::
 Running tests
 -------------------------------------------------
 
-Install tox the global python 3 environment. It may be installed using your
+The test runner is ``pytest``. The tool used to automate running various types
+of tests under different environments is ``tox``.
+
+Install tox in the global Python 3 environment. It may be installed using your
 package manager or with pip::
 
     pip3 install tox
